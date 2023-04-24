@@ -1,7 +1,22 @@
-export {getWeatherData}
-
-async function getWeatherData(location){
-    const weatherData = await fetch(`https://api.weatherapi.com/v1/current.json?key=25bafc304e7c429f98c204403231704&q=${location}`);
+export {getWeatherData }
+const result = document.getElementById('result');
+async function getWeatherData(url){
+    try{
+    const weatherData = await fetch(url);
     const weatherDataJson = await weatherData.json();
-    await console.log(weatherDataJson)
+    await console.log(weatherDataJson);
+   
+    const obj = {}
+
+    const currentCondition = weatherDataJson.current.condition.text
+    const temp = weatherDataJson.current.temp_c;
+    
+    obj.current = currentCondition
+    obj.temp = temp
+
+    return obj}
+
+    catch{
+    result.innerHTML='Please enter a valid Town/City/State/Country'
+    }
 }
