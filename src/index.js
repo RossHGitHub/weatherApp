@@ -1,7 +1,5 @@
 import './style.css';
-import { fetchData} from './APIfunctions';
-import { storeDat} from './APIfunctions';
-import { processData } from './utilities';
+import { processData, setData} from './utilities';
 
 
 const search=document.getElementById('searchBar');
@@ -10,4 +8,6 @@ const result = document.getElementById('result');
 
 
 
- button.addEventListener('click', ()=>{ processData(searchBar.value)});
+ button.addEventListener('click', ()=>{ processData(searchBar.value)
+
+setData()});

@@ -8,13 +8,22 @@
 </head>
 <body>
     <script src="./main.js" defer> </script>
-    <h1 id='header'>Weather</h1>
-    <h3 id="result"></h3>
+
+    
+    <h1 id='header'>The Weather</h1>
+    <div class="main">
+    <div class="results">
+        <div id="desc"></div>
+        <div id="tempC"></div>
+        <div id="tempF"></div>
+        <div id="humidity"></div>
+    </div>
     <form id="search">
         <label for="searchBar" id="search">Search</label>
         <input type="text" name="searchBar" id="searchBar">
         <button type="button" id="button">Search</button>
     </form>
+    </div>
 
 <img id="weatherImg">
 </body>

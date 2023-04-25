@@ -1,10 +1,14 @@
 export {fetchData, storeData }
 
 async function fetchData(location) {
+    try{
     const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=25bafc304e7c429f98c204403231704&q=${location}`);
     const weatherData = await response.json();
     await console.log(weatherData)
-    return weatherData;
+    return weatherData;}
+    catch{
+        console.log('error has occured')
+    }
 }
 
 function storeData(data){
