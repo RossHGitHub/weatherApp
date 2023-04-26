@@ -1,5 +1,5 @@
 import './style.css';
-import { processData, setData} from './utilities';
+import { processData, consoleLog} from './utilities';
 
 
 const search=document.getElementById('searchBar');
@@ -10,4 +10,4 @@ const result = document.getElementById('result');
 
  button.addEventListener('click', ()=>{ processData(searchBar.value)
 
-setData()});
+});
