@@ -17,11 +17,25 @@ async function processData(location){
     }
 };
 
+
+
  function displayData(desc, tempC, tempF, humidity, icon, locationP, country){
-    let descDisplay = document.getElementById('desc').innerHTML=`${desc}`;
-    let tempDisplay = document.getElementById('tempC').innerHTML=`${tempC}°C`;
+    let descDisplay = document.getElementById('desc').innerHTML=`${desc}`;  
+        if(document.getElementById('checkbox').checked == false) {
+            let tempDisplay = document.getElementById('tempC').innerHTML=`${tempC}°C`;
+        }
+    
+        else {
+            let tempDisplay = document.getElementById('tempC').innerHTML=`${tempF}°F`;
+        }
+   
     let humidDisplay = document.getElementById('humidity').innerHTML=`${humidity}% Humidity`;
     let iconDisplay = document.getElementById('icon').src=icon;
-    let locationName = document.getElementById('locationName').innerHTML=(`In ${locationP}, ${country}:`)
+    let locationName = document.getElementById('locationName')
+    if (locationP !== country) {
+        locationName.innerHTML=(`In ${locationP}, ${country}:`)}
+        else {
+            locationName.innerHTML = (`In ${country}:`)
+        }
     
  }

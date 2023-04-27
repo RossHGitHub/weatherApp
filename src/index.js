@@ -7,7 +7,6 @@ const button = document.getElementById('button');
 const result = document.getElementById('result');
 
 
-
- button.addEventListener('click', ()=>{ processData(searchBar.value)
-
+ button.addEventListener('click', ()=>{ 
+processData(search.value);
 });
