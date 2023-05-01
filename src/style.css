@@ -108,6 +108,7 @@ body{
 
   #forecastResults{
     display: flex;
+    justify-content: center;
     height: 130px;
     width: 400px;
   }
@@ -119,4 +120,5 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 10px;
   }

@@ -1,6 +1,6 @@
 
 import { fetchData, storeData, fetchForecast} from "./APIfunctions";
-
+import moment from 'moment';
 export {processData}
 
 
@@ -26,6 +26,7 @@ async function processData(location){
       
         if(document.getElementById('checkbox').checked == false) {
             let tempDisplay = document.getElementById('tempC').innerHTML=`${tempC}°C`;
+            
         }
     
         else {
@@ -52,6 +53,12 @@ async function processData(location){
     forecastData.forEach(day => {
       const dayElement = document.createElement('div');
       dayElement.classList.add('fResultItem')
+
+      const dayEl = document.createElement('div');
+      let forecastDate = day.date;
+      console.log(forecastDate);
+      let formattedDay = moment(forecastDate).format('dddd'); 
+      dayEl.innerHTML=formattedDay;
   
       const tempElement = document.createElement('p');
       tempElement.textContent = `${day.day.avgtemp_c}°C`;
@@ -62,6 +69,7 @@ async function processData(location){
       iconElement.src = icon;
   
       // Append the temperature and icon elements to the day element
+        dayElement.appendChild(dayEl);
         dayElement.appendChild(iconElement);
         dayElement.appendChild(tempElement);
     

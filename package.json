@@ -19,7 +19,10 @@
   "homepage": "https://github.com/RossHGitHub/weatherApp#readme",
   "devDependencies": {
     "css-loader": "^6.7.3",
+    "file": "^0.2.2",
     "file-loader": "^6.2.0",
+    "loader": "^2.1.1",
+    "moment": "^2.29.4",
     "style-loader": "^3.3.2",
     "webpack": "^5.80.0",
     "webpack-cli": "^5.0.2"
