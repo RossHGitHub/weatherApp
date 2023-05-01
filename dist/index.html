@@ -8,6 +8,12 @@
 </head>
 <body>
     <script src="./main.js" defer> </script>
+    <h1 id='header'>The Weather</h1>
+    <form id="search">
+        <input type="text" name="searchBar" id="searchBar">
+        <button type="button" id="button">Search</button>
+    </form>
+  
 <div class="celcFaraSwitch">
     <h4>°C</h4>
     <label class="switch">
@@ -17,7 +23,7 @@
       <h4>°F</h4>
 </div>
 
-    <h1 id='header'>The Weather</h1>
+    
     <div class="main"> 
     <div id="locationName"></div>
     <div class="results">
@@ -25,15 +31,16 @@
        <div id="tempC"></div>
        <div id="desc"></div>
        <div id="humidity"></div>
+
+      
         
 
     </div>
-    <form id="search">
-        <input type="text" name="searchBar" id="searchBar">
-        <button type="button" id="button">Search</button>
-    </form>
+    <div id="forecastResults">
+        </div>
+    </div>
+  
     </div>
 
-<img id="weatherImg">
 </body>
 </html>

@@ -1,7 +1,7 @@
 html{
     background-image: url(../src/img/treeBackground.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+  
     height: 100vh;
     width: 100vw;  
     padding: 0;
@@ -26,8 +26,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 400px;
-    width: 400px;
 }
 
 .results{
@@ -104,4 +104,19 @@ body{
     display: flex;
     justify-content: center;
     width: 200px;
+  }
+
+  #forecastResults{
+    display: flex;
+    height: 130px;
+    width: 400px;
+  }
+
+  .fResultItem{
+    height: 130px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }

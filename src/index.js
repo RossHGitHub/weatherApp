@@ -1,5 +1,5 @@
 import './style.css';
-import { processData, consoleLog} from './utilities';
+import { processData} from './utilities';
 
 
 const search=document.getElementById('searchBar');

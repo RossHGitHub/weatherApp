@@ -1,4 +1,4 @@
-export {fetchData, storeData }
+export {fetchData, storeData, fetchForecast}
 
 async function fetchData(location) {
     
@@ -22,3 +22,12 @@ function storeData(data){
     return {desc, tempC, tempF, humidity, icon, location, country} 
 }
 
+
+
+async function fetchForecast(location){
+    const fResponse = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=25bafc304e7c429f98c204403231704&q=${location}&days=6`);
+    const fWeatherData = await fResponse.json();
+    await console.log(fWeatherData);
+    const loopInfo = fWeatherData.forecast.forecastday;
+    return {loopInfo};
+}

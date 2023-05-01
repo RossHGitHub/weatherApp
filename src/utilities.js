@@ -1,5 +1,5 @@
 
-import { fetchData, storeData } from "./APIfunctions";
+import { fetchData, storeData, fetchForecast} from "./APIfunctions";
 
 export {processData}
 
@@ -7,10 +7,12 @@ export {processData}
 async function processData(location){
     try{
     const data = await fetchData(location);
-    let weatherData = storeData(data);
+     const fData = await fetchForecast(location);
+     let weatherData = storeData(data);
     displayData(weatherData.desc, weatherData.tempC, weatherData.tempF, weatherData.humidity, weatherData.icon, weatherData.location, weatherData.country);
-
+    displayForecastData(fData.loopInfo);
     
+  
     }
     catch{
        alert('Please enter a valid Location.')
@@ -20,7 +22,8 @@ async function processData(location){
 
 
  function displayData(desc, tempC, tempF, humidity, icon, locationP, country){
-    let descDisplay = document.getElementById('desc').innerHTML=`${desc}`;  
+    let descDisplay = document.getElementById('desc').innerHTML=`${desc}`;
+      
         if(document.getElementById('checkbox').checked == false) {
             let tempDisplay = document.getElementById('tempC').innerHTML=`${tempC}°C`;
         }
@@ -38,4 +41,33 @@ async function processData(location){
             locationName.innerHTML = (`In ${country}:`)
         }
     
+
+   
  }
+ 
+ function displayForecastData(forecastData) {
+    const forecastElement = document.getElementById('forecastResults');
+  
+    // Loop through each forecast day and create a div for it
+    forecastData.forEach(day => {
+      const dayElement = document.createElement('div');
+      dayElement.classList.add('fResultItem')
+  
+      const tempElement = document.createElement('p');
+      tempElement.textContent = `${day.day.avgtemp_c}°C`;
+  
+      // Create an element for the icon
+      const iconElement = document.createElement('img');
+      let icon = day.day.condition.icon
+      iconElement.src = icon;
+  
+      // Append the temperature and icon elements to the day element
+        dayElement.appendChild(iconElement);
+        dayElement.appendChild(tempElement);
+    
+  
+      // Append the day element to the forecast element
+      forecastElement.appendChild(dayElement);
+    });
+  }
+  
