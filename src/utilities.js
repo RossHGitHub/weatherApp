@@ -48,9 +48,10 @@ async function processData(location){
  
  function displayForecastData(forecastData) {
     const forecastElement = document.getElementById('forecastResults');
-  
+    forecastElement.innerHTML='';
     // Loop through each forecast day and create a div for it
     forecastData.forEach(day => {
+        
       const dayElement = document.createElement('div');
       dayElement.classList.add('fResultItem')
 
