@@ -57,7 +57,6 @@ async function processData(location){
 
       const dayEl = document.createElement('div');
       let forecastDate = day.date;
-      console.log(forecastDate);
       let formattedDay = moment(forecastDate).format('dddd'); 
       dayEl.innerHTML=formattedDay;
   

@@ -4,7 +4,6 @@ async function fetchData(location) {
     
     const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=25bafc304e7c429f98c204403231704&q=${location}`);
     const weatherData = await response.json();
-    await console.log(weatherData)
     return weatherData;
   
 }
@@ -27,7 +26,6 @@ function storeData(data){
 async function fetchForecast(location){
     const fResponse = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=25bafc304e7c429f98c204403231704&q=${location}&days=6`);
     const fWeatherData = await fResponse.json();
-    await console.log(fWeatherData);
     const loopInfo = fWeatherData.forecast.forecastday;
     return {loopInfo};
 }
